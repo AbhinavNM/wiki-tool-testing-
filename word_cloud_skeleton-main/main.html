@@ -2,44 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wikipedia API Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Word Cloud</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Wikipedia Search</h1>
+    <header>
+        <h1>Wiki Word Cloud</h1>
+    </header>
 
-<div class="container">
+    <main class="container">
 
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Enter topic">
-        <button onclick="searchWiki()">Search</button>
-    </div>
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Enter a topic to generate a word cloud">
+                <button id="searchButton">Generate</button>
+            </div>
+            <div id="loader" class="loader" style="display: none;"></div>
+        </section>
 
-    <h3>Search API Link</h3>
-    <p id="searchApiLink"></p>
+        <section class="results-section">
+            <div class="api-links">
+                <div>
+                    <h3>Search API Link</h3>
+                    <p id="searchApiLink"></p>
+                </div>
+                <div>
+                    <h3>Clicked Page API Link</h3>
+                    <p id="pageApiLink"></p>
+                </div>
+            </div>
 
-    <h3>Top 5 Results (click one)</h3>
-    <ul id="results"></ul>
+            <div class="content-wrapper">
+                <div class="top-results">
+                    <h3>Top 5 Results (click one)</h3>
+                    <ul id="results"></ul>
+                </div>
 
-    <h3>Clicked Page API Link</h3>
-    <p id="pageApiLink"></p>
+                <div class="top-words">
+                    <h3>Top 20 Most Used Words</h3>
+                    <ol id="topWords"></ol>
+                </div>
+            </div>
+        </section>
 
-    <h3>Top 20 Most Used Words</h3>
-    <ol id="topWords"></ol>
+        <section class="wordcloud-section">
+            <h3>Word Cloud</h3>
+            <div class="wordcloud-wrapper">
+                <canvas id="wordCloudCanvas"></canvas>
+            </div>
+        </section>
 
-    <h3>Word Cloud</h3>
-    <div class="wordcloud-wrapper">
-        <canvas id="wordCloudCanvas"></canvas>
-    </div>
+    </main>
 
-</div>
+    <footer>
+        <p>Powered by <a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank">Wikipedia API</a></p>
+    </footer>
 
-<!-- WordCloud library -->
-<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.js"></script>
+    <!-- WordCloud library -->
+    <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.js"></script>
 
-<!-- App JS -->
-<script src="script.js"></script>
+    <!-- App JS -->
+    <script src="javascript.js"></script>
 
 </body>
 </html>
