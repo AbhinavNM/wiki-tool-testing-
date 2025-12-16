@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function generateWordCloud(wordData) {
-        console.log("wordData:", wordData);
         const canvas = document.getElementById("wordCloudCanvas");
         const wrapper = canvas.parentElement;
 
