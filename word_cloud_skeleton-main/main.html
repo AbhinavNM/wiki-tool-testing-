@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia API Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Wikipedia Search</h1>
+
+<div class="container">
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Enter topic">
+        <button onclick="searchWiki()">Search</button>
+    </div>
+
+    <h3>Search API Link</h3>
+    <p id="searchApiLink"></p>
+
+    <h3>Top 5 Results (click one)</h3>
+    <ul id="results"></ul>
+
+    <h3>Clicked Page API Link</h3>
+    <p id="pageApiLink"></p>
+
+    <h3>Top 20 Most Used Words</h3>
+    <ol id="topWords"></ol>
+
+    <h3>Word Cloud</h3>
+    <div class="wordcloud-wrapper">
+        <canvas id="wordCloudCanvas"></canvas>
+    </div>
+
+</div>
+
+<!-- WordCloud library -->
+<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.js"></script>
+
+<!-- App JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
