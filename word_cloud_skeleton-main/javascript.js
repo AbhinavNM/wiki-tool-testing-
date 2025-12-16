@@ -126,7 +126,13 @@ document.addEventListener("DOMContentLoaded", () => {
             list.appendChild(li);
         });
 
-        generateWordCloud(topWords);
+        if (topWords.length > 0) {
+            const maxFreq = topWords[0][1];
+            const normalizedWords = topWords.map(([word, count]) => [word, count / maxFreq]);
+            generateWordCloud(normalizedWords);
+        } else {
+            generateWordCloud([]);
+        }
     }
 
     function generateWordCloud(wordData) {
@@ -139,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         WordCloud(canvas, {
             list: wordData,
             gridSize: Math.round(canvas.width / 80),
-            weightFactor: size => size * (canvas.width / 400),
+            weightFactor: size => size * 50,
             fontFamily: "inherit",
             color: () => `hsl(${Math.random() * 360}, 70%, 50%)`,
             backgroundColor: "transparent",
@@ -149,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
             shrinkToFit: true
         });
     }
+
 
     function showLoader(show) {
         loader.style.display = show ? "block" : "none";
