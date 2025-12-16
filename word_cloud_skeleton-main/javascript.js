@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         WordCloud(canvas, {
             list: wordData,
             gridSize: Math.round(canvas.width / 80),
-            weightFactor: size => size * 50,
+            weightFactor: size => Math.log(size) * 10,
             fontFamily: "inherit",
             color: () => `hsl(${Math.random() * 360}, 70%, 50%)`,
             backgroundColor: "transparent",
