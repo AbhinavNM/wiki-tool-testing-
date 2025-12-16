@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="top-words">
-                    <h3>Top 20 Most Used Words</h3>
+                    <h3 id="topWordsTitle">Top 20 Most Used Words</h3>
                     <ol id="topWords"></ol>
                 </div>
             </div>
@@ -49,6 +49,17 @@
 
         <section class="wordcloud-section">
             <h3>Word Cloud</h3>
+            <div class="controls">
+                <div class="control">
+                    <label for="wordCount">Number of words:</label>
+                    <input type="range" id="wordCount" min="10" max="100" value="20">
+                    <span id="wordCountValue">20</span>
+                </div>
+                <div class="control">
+                    <label for="customStopWords">Custom stop words (comma-separated):</label>
+                    <input type="text" id="customStopWords" placeholder="e.g., wikipedia, page">
+                </div>
+            </div>
             <div class="wordcloud-wrapper">
                 <canvas id="wordCloudCanvas"></canvas>
             </div>
