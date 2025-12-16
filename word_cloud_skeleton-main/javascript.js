@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+
     function showLoader(show) {
         loader.style.display = show ? "block" : "none";
     }
